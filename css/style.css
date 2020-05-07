@@ -1,6 +1,10 @@
+*{
+    box-sizing: border-box;
+}
 .row-header{
     margin:0px auto;
     padding:0px;
+    padding-top: 2rem;
 }
 
 .row-content {
@@ -28,4 +32,19 @@ address{
 }
 header{
     background: rgb(105, 72, 161) !important;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+label{
+    font-weight: 700;
+}
+form{
+    width: 70%;
+    margin: auto;
+    border: #eee solid 1px;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
 }
