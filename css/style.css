@@ -16,8 +16,9 @@
 
 .footer{
     background-color: #D1C4E9;
-    margin:0px auto;
+    margin:0px;
     padding: 20px 0px 20px 0px;
+    width: 100% ;
 }
 .jumbotron {
     padding:70px 30px 70px 30px;
@@ -40,7 +41,36 @@ nav ul{
 label{
     font-weight: 700;
 }
-form{
+.tab-content{
+    border-left: #eee 1px solid;
+    border-right: #eee 1px solid;
+    border-bottom: #eee 1px solid;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+a:hover{
+    cursor: pointer;
+}
+.carousel {
+    background:#512DA8;
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+.carousel-caption{
+    position: absolute;
+    left: 6rem;
+    top: 5rem;
+}
+/*form{
     width: 70%;
     margin: auto;
     border: #eee solid 1px;
@@ -48,4 +78,4 @@ form{
     border-radius: 10px;
     margin-bottom: 2rem;
     
-}
+}*/
