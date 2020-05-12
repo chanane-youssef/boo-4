@@ -24,7 +24,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title text-dark font-weight-bold">Reserve a table </h4>
+                        <h4 class="modal-title font-weight-bold">Reserve a table </h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body text-dark">
@@ -92,7 +92,7 @@
                                 <div class="col-sm-auto">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label"> Remember me
+                                        <label class="form-check-label text-dark"> Remember me
                                         </label>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="col-sm-1 align-self-center">
                         <span class="navbar-text">
-                            <a data-toggle="modal" data-target="#loginModal">
+                            <a id="login-btn"><!--data-toggle="modal" data-target="#loginModal"-->
                             <span class="fa fa-sign-in"></span> Login</a>
                         </span> 
                     </div>
@@ -132,9 +132,7 @@
             </div>
             </div>
         </nav>
-        <div class="container">
-            
-                
+        <div class="container">            
             <div class="row row-header">
                 <div class="col-12 col-sm-6">
                     <h1>Ristorante con Fusion</h1>
@@ -145,11 +143,10 @@
                 </div>
                 <div class="col-12 col-sm-3 d-flex">
                     <button class="btn btn-sm btn-warning btn-block align-self-center font-weight-bold offset-sm-1 pt-2 pb-2"
-                     role="button" data-toggle="modal" data-target="#table">Reserve Table</button>
+                     role="button" id="table-btn">Reserve Table</button><!-- data-toggle="modal" data-target="#table"-->
                 </div>
             </div>
         </div>
-        
     </header>
 
     <div class="container mt-3">
@@ -204,7 +201,11 @@
                         </a>
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
-                        </a>     
+                        </a>
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span id="carousel-button-icon" class="fa fa-pause"
+                               ></span>
+                        </button>          
                     </div>
                 </div>
             </div>
@@ -307,7 +308,28 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>		
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>		
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>	
-    
+    <script>
+        $("#carouselButton").click(function(){
+               if ($("#carouselButton").children("span").hasClass('fa-pause'))
+                  {
+                   $("#mycarousel").carousel('pause');
+                   $("#carouselButton").children("span").removeClass('fa-pause');
+                   $("#carouselButton").children("span").addClass('fa-play');
+               }
+               else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                   $("#mycarousel").carousel('cycle');
+                   $("#carouselButton").children("span").removeClass('fa-play');
+                   $("#carouselButton").children("span").addClass('fa-pause');
+               }
+           });
+           $("#table-btn").click(function(){
+               $("#table").modal('toggle');
+           })
+           $("#login-btn").click(function(){
+               $("#loginModal").modal("toggle");
+           })
+
+    </script>
 </body>
 
 </html>
